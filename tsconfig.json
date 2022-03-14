@@ -5,7 +5,7 @@
     "./dist"
   ],
   "files": [
-    "./src/index.ts",
+    "./src/ejercicio-1/pokemon.ts",
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
