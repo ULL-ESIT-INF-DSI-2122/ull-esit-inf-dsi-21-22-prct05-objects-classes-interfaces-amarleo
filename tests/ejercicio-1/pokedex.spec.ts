@@ -10,7 +10,14 @@ const Ninetales = new Pokemon('Ninetales', 1.1, 19.9, 'Fire', 76, 75, 100, 73);
 const pokedex = new Pokedex([Gyarados, Chikorita, Ninetales]);
 
 describe('Pokedex Class Tests', () => {
-  it('Pokedex attributes must be accesibles', () => {
-    expect(pokedex.list).to.be.eql([Gyarados, Chikorita, Ninetales]);
+  describe('Pokedex Attributes must be accessibles', () => {
+    it('Pokedex List', () => {
+      expect(pokedex.pokemonList).to.be.eql([Gyarados, Chikorita, Ninetales]);
+    });
+  });
+  describe('Pokedex getters tests', () => {
+    it('getPokemonList', () => {
+      expect(pokedex.pokemonList).to.be.eql([Gyarados, Chikorita, Ninetales]);
+    });
   });
 });
