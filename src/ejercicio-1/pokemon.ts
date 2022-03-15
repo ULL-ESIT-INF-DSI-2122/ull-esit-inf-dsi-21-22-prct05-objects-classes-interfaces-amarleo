@@ -29,4 +29,28 @@ export class Pokemon {
   getHeight() {
     return this.height;
   }
+
+  getWeight() {
+    return this.weight;
+  }
+
+  getType() {
+    return this.type;
+  }
+
+  getAttack() {
+    return this.attack;
+  }
+
+  getDefense() {
+    return this.defense;
+  }
+
+  getSpeed() {
+    return this.speed;
+  }
+
+  getHp() {
+    return this.hp;
+  }
 }

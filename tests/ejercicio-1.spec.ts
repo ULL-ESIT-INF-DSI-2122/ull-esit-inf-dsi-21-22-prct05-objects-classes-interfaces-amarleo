@@ -46,19 +46,19 @@ describe('Pokemon class tests', () => {
       expect(Ninetales.getAttack()).to.be.eql(76);
     });
     it('getDefense method', () => {
-      expect(Gyarados.getDefense()).to.be.eql(65);
-      expect(Chikorita.getDefense()).to.be.eql(49);
-      expect(Ninetales.getDefense()).to.be.eql(76);
+      expect(Gyarados.getDefense()).to.be.eql(60);
+      expect(Chikorita.getDefense()).to.be.eql(65);
+      expect(Ninetales.getDefense()).to.be.eql(75);
     });
     it('getSpeed method', () => {
-      expect(Gyarados.getSpeed()).to.be.eql(65);
-      expect(Chikorita.getSpeed()).to.be.eql(49);
-      expect(Ninetales.getSpeed()).to.be.eql(76);
+      expect(Gyarados.getSpeed()).to.be.eql(110);
+      expect(Chikorita.getSpeed()).to.be.eql(45);
+      expect(Ninetales.getSpeed()).to.be.eql(100);
     });
     it('getHp method', () => {
-      expect(Gyarados.getHp()).to.be.eql(65);
-      expect(Chikorita.getHp()).to.be.eql(49);
-      expect(Ninetales.getHp()).to.be.eql(76);
+      expect(Gyarados.getHp()).to.be.eql(500);
+      expect(Chikorita.getHp()).to.be.eql(45);
+      expect(Ninetales.getHp()).to.be.eql(73);
     });
   });
 });
