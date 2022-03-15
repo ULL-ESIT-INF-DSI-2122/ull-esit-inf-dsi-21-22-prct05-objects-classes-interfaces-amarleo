@@ -14,6 +14,9 @@ describe('Pokedex Class Tests', () => {
     it('Pokedex List', () => {
       expect(pokedex.pokemonList).to.be.eql([Gyarados, Chikorita, Ninetales]);
     });
+    it('First Pokemon on the Pokedex name', () => {
+      expect(pokedex.pokemonList[0].getName()).to.be.eql('Gyarados');
+    });
   });
   describe('Pokedex getters tests', () => {
     it('getPokemonList', () => {
