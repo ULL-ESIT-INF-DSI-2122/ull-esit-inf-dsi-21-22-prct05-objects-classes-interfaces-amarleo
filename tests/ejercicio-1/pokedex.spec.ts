@@ -23,7 +23,7 @@ describe('Pokedex Class Tests', () => {
   });
   describe('Pokedex setters tests', () => {
     it('setPokedexList', () => {
-      let pokedexKanto = new Pokedex();
+      const pokedexKanto = new Pokedex();
       pokedexKanto.setPokemonList([Gyarados, Ninetales]);
       expect(pokedexKanto.getPokemonList()).to.be.eql([Gyarados, Ninetales]);
     });

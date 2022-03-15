@@ -10,4 +10,8 @@ export class Pokedex {
   getPokemonList() {
     return this.pokemonList;
   }
+
+  setPokemonList(pokemonList: Pokemon[]) {
+    this.pokemonList = pokemonList;
+  }
 }
