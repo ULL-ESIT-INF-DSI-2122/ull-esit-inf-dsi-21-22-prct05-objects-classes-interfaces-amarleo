@@ -1,6 +1,6 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Pokemon} from '../src/ejercicio-1/pokemon';
+import {Pokemon} from '../../src/ejercicio-1/pokemon';
 
 const Gyarados = new Pokemon('Gyarados', 6.5, 230, 'Water', 65, 60, 110, 500);
 const Chikorita = new Pokemon('Chikorita', 0.9, 6.4, 'Grass', 49, 65, 45, 45);
