@@ -1,14 +1,16 @@
+type PokemonType = 'Water' | 'Fire' | 'Grass' | 'Electric';
+
 export class Pokemon {
   name: string;
   height: number;
   weight: number;
-  type: string;
+  type: PokemonType;
   attack: number;
   defense: number;
   speed: number;
   hp: number;
 
-  constructor(name: string, height: number, weight: number, type: string,
+  constructor(name: string, height: number, weight: number, type: PokemonType,
       attack: number, defense: number, speed: number, hp: number) {
     this.name = name;
     this.height = height;
