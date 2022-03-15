@@ -36,7 +36,7 @@ describe('Pokedex Class Tests', () => {
     it('Wild Voltorb Appeared!', () => {
       pokedex.setNewPokemon(Voltorb);
       expect(pokedex.getPokemonList())
-          .to.be.eql([[Gyarados, Chikorita, Ninetales, Voltorb]]);
+          .to.be.eql([Gyarados, Chikorita, Ninetales, Voltorb]);
     });
   });
 });

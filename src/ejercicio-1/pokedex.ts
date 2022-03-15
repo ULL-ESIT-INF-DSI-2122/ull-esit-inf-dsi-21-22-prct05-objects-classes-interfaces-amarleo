@@ -14,4 +14,8 @@ export class Pokedex {
   setPokemonList(pokemonList: Pokemon[]) {
     this.pokemonList = pokemonList;
   }
+
+  setNewPokemon(newPokemon: Pokemon) {
+    this.pokemonList.push(newPokemon);
+  }
 }
