@@ -30,5 +30,35 @@ describe('Pokemon class tests', () => {
       expect(Chikorita.getHeight()).to.be.eql(0.9);
       expect(Ninetales.getHeight()).to.be.eql(1.1);
     });
+    it('getWeight method', () => {
+      expect(Gyarados.getWeight()).to.be.eql(230);
+      expect(Chikorita.getWeight()).to.be.eql(6.4);
+      expect(Ninetales.getWeight()).to.be.eql(19.9);
+    });
+    it('getType method', () => {
+      expect(Gyarados.getType()).to.be.eql('Water');
+      expect(Chikorita.getType()).to.be.eql('Grass');
+      expect(Ninetales.getType()).to.be.eql('Fire');
+    });
+    it('getAttack method', () => {
+      expect(Gyarados.getAttack()).to.be.eql(65);
+      expect(Chikorita.getAttack()).to.be.eql(49);
+      expect(Ninetales.getAttack()).to.be.eql(76);
+    });
+    it('getDefense method', () => {
+      expect(Gyarados.getDefense()).to.be.eql(65);
+      expect(Chikorita.getDefense()).to.be.eql(49);
+      expect(Ninetales.getDefense()).to.be.eql(76);
+    });
+    it('getSpeed method', () => {
+      expect(Gyarados.getSpeed()).to.be.eql(65);
+      expect(Chikorita.getSpeed()).to.be.eql(49);
+      expect(Ninetales.getSpeed()).to.be.eql(76);
+    });
+    it('getHp method', () => {
+      expect(Gyarados.getHp()).to.be.eql(65);
+      expect(Chikorita.getHp()).to.be.eql(49);
+      expect(Ninetales.getHp()).to.be.eql(76);
+    });
   });
 });
