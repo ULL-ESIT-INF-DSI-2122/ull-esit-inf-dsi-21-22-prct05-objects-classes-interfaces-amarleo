@@ -25,4 +25,8 @@ export class Pokemon {
   getName() {
     return this.name;
   }
+
+  getHeight() {
+    return this.height;
+  }
 }
