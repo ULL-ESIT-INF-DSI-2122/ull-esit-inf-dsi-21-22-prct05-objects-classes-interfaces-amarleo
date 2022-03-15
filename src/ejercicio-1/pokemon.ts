@@ -21,4 +21,8 @@ export class Pokemon {
     this.speed = speed;
     this.hp = hp;
   }
+
+  getName() {
+    return this.name;
+  }
 }

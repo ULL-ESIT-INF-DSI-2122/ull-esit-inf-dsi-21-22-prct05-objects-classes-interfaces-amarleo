@@ -25,5 +25,10 @@ describe('Pokemon class tests', () => {
       expect(Chikorita.getName()).to.be.eql('Chikorita');
       expect(Ninetales.getName()).to.be.eql('Ninetales');
     });
+    it('getHeight method', () => {
+      expect(Gyarados.getHeight()).to.be.eql(6.5);
+      expect(Chikorita.getHeight()).to.be.eql(0.9);
+      expect(Ninetales.getHeight()).to.be.eql(1.1);
+    });
   });
 });
