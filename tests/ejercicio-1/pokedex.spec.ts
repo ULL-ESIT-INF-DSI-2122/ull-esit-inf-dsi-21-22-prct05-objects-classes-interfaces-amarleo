@@ -17,7 +17,15 @@ describe('Pokedex Class Tests', () => {
   });
   describe('Pokedex getters tests', () => {
     it('getPokemonList', () => {
-      expect(pokedex.pokemonList).to.be.eql([Gyarados, Chikorita, Ninetales]);
+      expect(pokedex.getPokemonList())
+          .to.be.eql([Gyarados, Chikorita, Ninetales]);
+    });
+  });
+  describe('Pokedex setters tests', () => {
+    it('setPokedexList', () => {
+      let pokedexKanto = new Pokedex();
+      pokedexKanto.setPokemonList([Gyarados, Ninetales]);
+      expect(pokedexKanto.getPokemonList()).to.be.eql([Gyarados, Ninetales]);
     });
   });
 });
