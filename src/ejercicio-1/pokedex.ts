@@ -1,9 +1,13 @@
 import {Pokemon} from './pokemon';
 
 export class Pokedex {
-  list: Pokemon[];
+  pokemonList: Pokemon[];
 
-  constructor(list: Pokemon[]) {
-    this.list = list;
+  constructor(pokemonList: Pokemon[]) {
+    this.pokemonList = pokemonList;
+  }
+
+  getPokemonList() {
+    return this.pokemonList;
   }
 }
