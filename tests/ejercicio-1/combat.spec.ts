@@ -31,4 +31,9 @@ describe('Combat Class tests', () => {
           .to.be.eql(82);
     });
   });
+  describe('Pokemon Start Combat Function', () => {
+    it('Example 1: Gyarados vs Ninetales', () => {
+      expect(GyaradosVsNinetales.start()).to.be.eql('Gyarados Wins!');
+    });
+  });
 });
