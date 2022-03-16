@@ -8,7 +8,7 @@ const Chikorita = new Pokemon('Chikorita', 0.9, 6.4, 'Grass', 49, 65, 45, 45);
 const Ninetales = new Pokemon('Ninetales', 1.1, 19.9, 'Fire', 76, 75, 100, 73);
 
 const GyaradosVsNinetales = new Combat(Gyarados, Ninetales);
-const ChikoritaVsGyarados = new Combat(Chikorita, Gyarados);
+// const ChikoritaVsGyarados = new Combat(Chikorita, Gyarados);
 
 describe('Combat Class tests', () => {
   it('Combat Constructor', () => {
@@ -23,10 +23,12 @@ describe('Combat Class tests', () => {
   });
   describe('Pokemon Damage Function', () => {
     it('Example 1: Gyarados vs Ninetales', () => {
-      expect(pokemonDamage(GyaradosVsNinetales).to.be.eql(87));
+      expect(GyaradosVsNinetales.pokemonDamage(Gyarados, Ninetales))
+          .to.be.eql(87);
     });
     it('Example 2: Chikorita vs Gyarados', () => {
-      expect(pokemonDamage(ChikoritaVsGyarados).to.be.eql(82));
+      expect(GyaradosVsNinetales.pokemonDamage(Chikorita, Gyarados))
+          .to.be.eql(82);
     });
   });
 });
