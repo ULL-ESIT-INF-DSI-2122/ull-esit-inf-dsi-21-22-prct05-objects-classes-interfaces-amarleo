@@ -8,4 +8,12 @@ export class Combat {
     this.firstPokemon = firstPokemon;
     this.secondPokemon = secondPokemon;
   }
+
+  getFirstPokemon() {
+    return this.firstPokemon;
+  }
+
+  getSecondPokemon() {
+    return this.secondPokemon;
+  }
 }
