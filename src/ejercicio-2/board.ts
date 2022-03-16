@@ -6,4 +6,12 @@ export class Board {
     this.rows = rows;
     this.columns = columns;
   }
+
+  getRows() {
+    return this.rows;
+  }
+
+  getColumns() {
+    return this.columns;
+  }
 }
