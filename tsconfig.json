@@ -6,6 +6,8 @@
   ],
   "files": [
     "./src/ejercicio-1/pokemon.ts",
+    "./src/ejercicio-1/pokedex.ts",
+    "./src/ejercicio-1/combat.ts",
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
