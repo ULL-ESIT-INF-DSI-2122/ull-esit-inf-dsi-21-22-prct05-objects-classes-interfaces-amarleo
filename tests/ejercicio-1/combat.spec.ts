@@ -13,4 +13,10 @@ describe('Combat Class tests', () => {
     expect(GyaradosVsNinetales.firstPokemon).to.be.eql(Gyarados);
     expect(GyaradosVsNinetales.secondPokemon).to.be.eql(Ninetales);
   });
+  describe('Combat Class methods', () => {
+    it('Pokemon Combat getters', () => {
+      expect(GyaradosVsNinetales.getFirstPokemon()).to.be.eql(Gyarados);
+      expect(GyaradosVsNinetales.getSecondPokemon()).to.be.eql(Ninetales);
+    });
+  });
 });
