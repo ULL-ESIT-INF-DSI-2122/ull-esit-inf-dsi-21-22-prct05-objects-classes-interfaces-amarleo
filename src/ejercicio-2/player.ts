@@ -4,4 +4,8 @@ export class Player {
   constructor(token: string) {
     this.token = token;
   }
+
+  getToken(): string {
+    return this.token;
+  }
 }
