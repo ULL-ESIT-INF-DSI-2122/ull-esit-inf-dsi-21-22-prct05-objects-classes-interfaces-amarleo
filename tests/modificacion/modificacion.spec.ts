@@ -14,6 +14,6 @@ describe('Hexadecimal Class tests', () => {
     });
     it('valueOf method', () => {
       expect(myHexNumber.valueOf()).to.be.eql(38);
-    })
+    });
   });
 });
