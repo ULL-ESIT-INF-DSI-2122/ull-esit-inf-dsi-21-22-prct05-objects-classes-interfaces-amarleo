@@ -40,4 +40,15 @@ describe('Board Class tests', () => {
       expect(defaultBoard.getColumns()).to.be.eql(7);
     });
   });
+  describe('Board methods', () => {
+    it('print board method', () => {
+      expect(defaultBoard.printBoard()).to.be.eql(
+          '[[0, 0, 0, 0, 0, 0, 0],' +
+          '[0, 0, 0, 0, 0, 0, 0],' +
+          '[0, 0, 0, 0, 0, 0, 0],' +
+          '[0, 0, 0, 0, 0, 0, 0],' +
+          '[0, 0, 0, 0, 0, 0, 0],' +
+          '[0, 0, 0, 0, 0, 0, 0]]');
+    });
+  });
 });
