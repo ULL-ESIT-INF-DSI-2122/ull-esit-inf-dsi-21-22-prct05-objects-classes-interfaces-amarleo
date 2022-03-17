@@ -16,7 +16,7 @@ export class Board {
     return this.columns;
   }
 
-  printBoard() {
+  printBoard(): string {
     let result: string = '';
     this.board.forEach((element: number[]) => {
       result += '[' + element + ']\n';
