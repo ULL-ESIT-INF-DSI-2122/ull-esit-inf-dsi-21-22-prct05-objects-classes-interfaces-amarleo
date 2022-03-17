@@ -32,5 +32,8 @@ describe('Hexadecimal Class tests', () => {
       expect(myFirstHexValue.substract(mySecondHexValue).toString())
           .to.be.eql('0x8');
     });
+    it('parse method', () => {
+      expect(Hexadecimal.parse('0x26')).to.be.eql(38);
+    });
   });
 });
