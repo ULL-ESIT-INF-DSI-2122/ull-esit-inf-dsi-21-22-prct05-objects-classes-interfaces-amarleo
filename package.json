@@ -9,7 +9,7 @@
     "coverage": "nyc npm test",
     "start": "tsc-watch --onSuccess \"node dist/index.js\"",
     "combat": "tsc-watch --onSuccess \"node dist/ejercicio-1/combat.js\"",
-    "tablero": "tsc-watch --onSuccess \"node dist/ejercicio-2/tablero.js\""
+    "board": "tsc-watch --onSuccess \"node dist/ejercicio-2/board.js\""
   },
   "repository": {
     "type": "git",
