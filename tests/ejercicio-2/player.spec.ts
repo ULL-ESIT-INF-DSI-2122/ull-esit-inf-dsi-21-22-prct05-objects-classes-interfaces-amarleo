@@ -12,4 +12,10 @@ describe('Player Class tests', () => {
       expect(player2.token).to.be.eql('Ø');
     });
   });
+  describe('Player Class Methods', () => {
+    it('getToken method', () => {
+      expect(player1.getToken()).to.be.eql('■');
+      expect(player2.getToken()).to.be.eql('Ø');
+    });
+  });
 });
