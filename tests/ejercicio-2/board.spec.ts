@@ -10,10 +10,26 @@ describe('Board Class tests', () => {
     it('Board Constructor', () => {
       expect(emptyBoard.rows).to.be.eql(6);
       expect(emptyBoard.columns).to.be.eql(7);
+      expect(emptyBoard.board)
+          .to.be.eql([
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0]]);
     });
     it('Board Constructor Default values', () => {
       expect(defaultBoard.rows).to.be.eql(6);
       expect(defaultBoard.columns).to.be.eql(7);
+      expect(defaultBoard.board)
+          .to.be.eql([
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0]]);
     });
   });
   describe('Board getters', () => {
