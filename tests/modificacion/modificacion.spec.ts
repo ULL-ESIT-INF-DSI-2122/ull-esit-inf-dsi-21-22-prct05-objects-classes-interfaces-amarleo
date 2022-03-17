@@ -24,5 +24,13 @@ describe('Hexadecimal Class tests', () => {
       expect(myFirstHexValue.add(mySecondHexValue).toString())
           .to.be.eql('0x26');
     });
+    it('substract method (valueOf)', () => {
+      expect(myFirstHexValue.substract(mySecondHexValue).valueOf())
+          .to.be.eql(8);
+    });
+    it('substract method (valueOf)', () => {
+      expect(myFirstHexValue.substract(mySecondHexValue).toString())
+          .to.be.eql('0x8');
+    });
   });
 });
