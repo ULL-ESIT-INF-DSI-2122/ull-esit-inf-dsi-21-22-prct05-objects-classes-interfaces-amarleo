@@ -39,7 +39,7 @@ export class Hexadecimal {
   }
 
   /**
-   * Method that substract two hexadecimal numbers
+   * Method that substract 2 hexadecimal numbers
    * @param otherHex Another hexadecimal number
    * @returns a new Hexadecimal object with the result
    */
