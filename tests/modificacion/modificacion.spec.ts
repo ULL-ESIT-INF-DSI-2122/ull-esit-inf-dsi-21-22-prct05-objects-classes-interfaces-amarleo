@@ -2,7 +2,9 @@ import 'mocha';
 import {expect} from 'chai';
 import {Hexadecimal} from '../../src/modificacion/modificacion';
 
-const myHexNumber = new Hexadecimal(38);
+let myHexNumber = new Hexadecimal(38);
+let myFirstHexValue = new Hexadecimal(23);
+let mySecondHexValue = new Hexadecimal(15);
 
 describe('Hexadecimal Class tests', () => {
   it('Hexadecimal Constructor', () => {
@@ -14,6 +16,13 @@ describe('Hexadecimal Class tests', () => {
     });
     it('valueOf method', () => {
       expect(myHexNumber.valueOf()).to.be.eql(38);
+    });
+    it('add method (valueOf)', () => {
+      expect(myFirstHexValue.add(mySecondHexValue).valueOf()).to.be.eql(38);
+    });
+    it('add method (toString)', () => {
+      expect(myFirstHexValue.add(mySecondHexValue).toString())
+          .to.be.eql('0x26');
     });
   });
 });
