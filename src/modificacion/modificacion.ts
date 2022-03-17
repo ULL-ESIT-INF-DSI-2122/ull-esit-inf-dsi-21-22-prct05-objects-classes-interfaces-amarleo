@@ -19,4 +19,9 @@ export class Hexadecimal {
     let result: number = this.decimal + otherHex.decimal;
     return new Hexadecimal(result);
   }
+
+  substract(otherHex: Hexadecimal): Hexadecimal {
+    let result: number = this.decimal - otherHex.decimal;
+    return new Hexadecimal(result);
+  }
 }
