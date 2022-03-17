@@ -24,4 +24,10 @@ export class Hexadecimal {
     let result: number = this.decimal - otherHex.decimal;
     return new Hexadecimal(result);
   }
+
+  parse(str: string): number {
+    let result: number = Number(str);
+    str = result.toString(10);
+    return Number(str);
+  }
 }

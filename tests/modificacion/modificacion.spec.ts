@@ -33,7 +33,7 @@ describe('Hexadecimal Class tests', () => {
           .to.be.eql('0x8');
     });
     it('parse method', () => {
-      expect(Hexadecimal.parse('0x26')).to.be.eql(38);
+      expect(myFirstHexValue.parse('0x26')).to.be.eql(38);
     });
   });
 });
