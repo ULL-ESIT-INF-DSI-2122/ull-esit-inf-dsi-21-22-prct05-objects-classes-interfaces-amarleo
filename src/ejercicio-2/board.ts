@@ -15,4 +15,12 @@ export class Board {
   getColumns() {
     return this.columns;
   }
+
+  printBoard() {
+    let result: string = '';
+    this.board.forEach((element: number[]) => {
+      result += '[' + element + ']\n';
+    });
+    return result;
+  }
 }
