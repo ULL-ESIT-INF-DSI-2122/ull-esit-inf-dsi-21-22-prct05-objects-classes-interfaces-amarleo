@@ -44,23 +44,43 @@ export class Connect4 {
     if (counter === 3) {
       return true;
     }
+    // vertical
+    fail = false;
+    counter = 0;
+    for (let i = row + 1; i < this.matchBoard.getRows(); i++) {
+      if ((this.getMatchBoard()[i][col] === player) && (fail === false)) {
+        counter++;
+      } else {
+        fail = true;
+      }
+    }
+    fail = false;
+    for (let i = row - 1; i >= 0; i--) {
+      if ((this.getMatchBoard()[i][col] === player) && (fail === false)) {
+        counter++;
+      } else {
+        fail = true;
+      }
+    }
+    if (counter >= 3) {
+      return true;
+    }
+
     return false;
   }
 }
 
-// let player1 = new Player(1);
-// let player2 = new Player(2);
-// let board = new Board();
-// let match = new Connect4(board, [player1, player2]);
-
-// const newBoard: number[][] = [
-//   [0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0],
-//   [0, 1, 0, 0, 0, 0, 0],
-//   [1, 1, 1, 1, 0, 0, 0]];
-// board.setBoard(newBoard);
-// match = new Connect4(board, [player1, player2]);
-
-// console.log(match.checkWin(player1.getToken(), 5, 2));
+let player1 = new Player(1);
+let player2 = new Player(2);
+let board = new Board();
+let match = new Connect4(board, [player1, player2]);
+const newBoard: number[][] = [
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0, 0, 0],
+  [0, 1, 1, 1, 0, 0, 0]];
+board.setBoard(newBoard);
+match = new Connect4(board, [player1, player2]);
+console.log(match.checkWin(player1.getToken(), 3, 1));
