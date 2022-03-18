@@ -37,8 +37,8 @@ describe('Connect4 Class Tests', () => {
       expect(match.getPlayers()).to.be.eql([player1, player2]);
     });
     it('getPlayer(player) method', () => {
-      expect(match.getPlayer[0]).to.be.eql([player1]);
-      expect(match.getPlayer[1]).to.be.eql([player2]);
+      expect(match.getPlayer(0)).to.be.eql(player1);
+      expect(match.getPlayer(1)).to.be.eql(player2);
     });
   });
 });

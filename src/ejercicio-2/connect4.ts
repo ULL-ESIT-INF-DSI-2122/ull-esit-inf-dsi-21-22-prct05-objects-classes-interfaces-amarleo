@@ -9,4 +9,16 @@ export class Connect4 {
     this.matchBoard = matchBoard;
     this.players = players;
   }
+
+  getMatchBoard() {
+    return this.matchBoard.board;
+  }
+
+  getPlayers() {
+    return this.players;
+  }
+
+  getPlayer(index: number) {
+    return this.players[index];
+  }
 }
