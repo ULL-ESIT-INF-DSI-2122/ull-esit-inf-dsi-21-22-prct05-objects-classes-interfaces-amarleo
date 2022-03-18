@@ -1,11 +1,11 @@
 export class Player {
-  token: string;
+  token: number;
 
-  constructor(token: string) {
+  constructor(token: number) {
     this.token = token;
   }
 
-  getToken(): string {
+  getToken(): number {
     return this.token;
   }
 }
