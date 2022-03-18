@@ -23,4 +23,15 @@ export class Board {
     });
     return result;
   }
+
+  dropToken(pos: number, token: number): number[][] {
+    for (let i = this.rows - 1; i > 0; i--) {
+      if (this.board[i][pos] != 0) {
+        this.board[i][pos] = token;
+      } else {
+        console.log('FILA FULL');
+      }
+    }
+    return this.board;
+  }
 }
