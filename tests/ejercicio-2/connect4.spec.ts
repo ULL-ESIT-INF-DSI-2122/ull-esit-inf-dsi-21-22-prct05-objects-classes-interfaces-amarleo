@@ -52,7 +52,7 @@ describe('Connect4 Class Tests', () => {
         [1, 1, 1, 1, 0, 0, 0]];
       board.setBoard(newBoard);
       match = new Connect4(board, [player1, player2]);
-      expect(match.checkWin()).to.be.true;
+      expect(match.checkWin(player1.getToken(), 5, 2)).to.be.true;
     });
   });
 });
