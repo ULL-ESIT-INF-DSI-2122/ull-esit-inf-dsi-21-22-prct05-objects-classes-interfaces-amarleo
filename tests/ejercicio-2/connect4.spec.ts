@@ -54,5 +54,17 @@ describe('Connect4 Class Tests', () => {
       match = new Connect4(board, [player1, player2]);
       expect(match.checkWin(player1.getToken(), 5, 2)).to.be.true;
     });
+    it('Vertical Win', () => {
+      const newBoard: number[][] = [
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0, 0]];
+      board.setBoard(newBoard);
+      match = new Connect4(board, [player1, player2]);
+      expect(match.checkWin(player1.getToken(), 2, 1)).to.be.true;
+    });
   });
 });
