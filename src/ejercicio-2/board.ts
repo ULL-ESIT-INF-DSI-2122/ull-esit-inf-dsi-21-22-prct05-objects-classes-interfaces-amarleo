@@ -5,7 +5,13 @@ export class Board {
   constructor(rows: number = 6, columns: number = 7, board?: number[][]) {
     this.rows = rows;
     this.columns = columns;
-    this.board = new Array(rows).fill(new Array(columns).fill(0));
+    this.board = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0]];
   }
 
   getRows() {
@@ -43,3 +49,6 @@ export class Board {
     return newBoard;
   }
 }
+
+let MFboard = new Board();
+console.log((MFboard.dropToken(0, 2)).printBoard());
