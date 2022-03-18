@@ -1,7 +1,6 @@
 import 'mocha';
 import {expect} from 'chai';
 import {Board} from '../../src/ejercicio-2/board';
-import {Player} from '../../src/ejercicio-2/player';
 
 const emptyBoard = new Board(6, 7);
 const defaultBoard = new Board();
@@ -52,13 +51,13 @@ describe('Board Class tests', () => {
           '[0,0,0,0,0,0,0]\n');
     });
     it('drop token method', () => {
-      expect((defaultBoard.dropToken(0, 7).printBoard())).to.be.eql(
+      expect((defaultBoard.dropToken(1, 7).printBoard())).to.be.eql(
           '[0,0,0,0,0,0,0]\n' +
           '[0,0,0,0,0,0,0]\n' +
           '[0,0,0,0,0,0,0]\n' +
           '[0,0,0,0,0,0,0]\n' +
           '[0,0,0,0,0,0,0]\n' +
-          '[0,0,0,0,0,0,0]\n');
+          '[0,7,0,0,0,0,0]\n');
     });
   });
   describe('Board setters', () => {
@@ -70,7 +69,8 @@ describe('Board Class tests', () => {
         [0, 0, 1, 1, 1, 0, 0],
         [0, 1, 1, 1, 1, 1, 0],
         [1, 1, 1, 1, 1, 1, 1]];
-      expect(emptyBoard.setBoard(newBoard)).to.be.eql([
+      emptyBoard.setBoard(newBoard);
+      expect(emptyBoard.board).to.be.eql([
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 1, 0, 0, 0],

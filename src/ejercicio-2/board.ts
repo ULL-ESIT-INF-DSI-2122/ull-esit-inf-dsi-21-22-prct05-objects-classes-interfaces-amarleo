@@ -2,7 +2,7 @@ export class Board {
   rows: number;
   columns: number;
   board: number[][];
-  constructor(rows: number = 6, columns: number = 7) {
+  constructor(rows: number = 6, columns: number = 7, board?: number[][]) {
     this.rows = rows;
     this.columns = columns;
     this.board = new Array(rows).fill(new Array(columns).fill(0));
@@ -16,6 +16,10 @@ export class Board {
     return this.columns;
   }
 
+  setBoard(newBoard: number[][]) {
+    this.board = newBoard;
+  }
+
   printBoard(): string {
     let result: string = '';
     this.board.forEach((element: number[]) => {
@@ -24,14 +28,18 @@ export class Board {
     return result;
   }
 
-  dropToken(pos: number, token: number): number[][] {
-    for (let i = this.rows - 1; i > 0; i--) {
-      if (this.board[i][pos] != 0) {
+  dropToken(pos: number, token: number): Board {
+    let dropped: boolean = false;
+    let i: number = this.board.length - 1;
+    while (i >= 0) {
+      if ((this.board[i][pos] === 0) && (dropped === false)) {
         this.board[i][pos] = token;
-      } else {
-        console.log('FILA FULL');
+        dropped = true;
       }
+      i--;
     }
-    return this.board;
+    let newBoard = new Board(this.rows, this.columns);
+    newBoard.setBoard(this.board);
+    return newBoard;
   }
 }
