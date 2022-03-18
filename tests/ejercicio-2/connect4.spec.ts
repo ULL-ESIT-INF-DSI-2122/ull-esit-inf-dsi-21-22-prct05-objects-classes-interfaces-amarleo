@@ -23,4 +23,22 @@ describe('Connect4 Class Tests', () => {
       expect(match.players[1]).to.be.eql(player2);
     });
   });
+  describe('Connect4 Class getters', () => {
+    it('getMatchBoard() method', () => {
+      expect(match.getMatchBoard()).to.be.eql([
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]]);
+    });
+    it('getPlayers() method', () => {
+      expect(match.getPlayers()).to.be.eql([player1, player2]);
+    });
+    it('getPlayer(player) method', () => {
+      expect(match.getPlayer[0]).to.be.eql([player1]);
+      expect(match.getPlayer[1]).to.be.eql([player2]);
+    });
+  });
 });
