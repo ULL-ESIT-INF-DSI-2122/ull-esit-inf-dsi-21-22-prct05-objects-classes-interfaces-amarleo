@@ -76,7 +76,7 @@ describe('Connect4 Class Tests', () => {
         [0, 0, 1, 2, 2, 2, 0]];
       board.setBoard(newBoard);
       match = new Connect4(board, [player1, player2]);
-      expect(match.checkWin(player1.getToken(), 5, 4)).to.be.true;
+      expect(match.checkWin(player1.getToken(), 5, 2)).to.be.true;
     });
     it('Diagonal 2 Win', () => {
       const newBoard: number[][] = [

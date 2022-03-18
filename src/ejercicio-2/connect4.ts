@@ -27,6 +27,7 @@ export class Connect4 {
     // horizontal
     let counter: number = 0;
     let fail: boolean = false;
+    let rowIndex: number = 0;
     for (let i = col + 1; i < this.getMatchBoard().length; i++) {
       if ((this.getMatchBoard()[row][i] === player) && (fail === false)) {
         counter++;
@@ -62,6 +63,32 @@ export class Connect4 {
       } else {
         fail = true;
       }
+    }
+    if (counter >= 3) {
+      return true;
+    }
+    // Diagonal 1
+
+    fail = false;
+    counter = 0;
+    rowIndex = row - 1;
+    for (let i = col + 1; i < this.matchBoard.getColumns(); i++) {
+      if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
+        counter++;
+      } else {
+        fail = true;
+      }
+      if (rowIndex > 0) rowIndex--;
+    }
+    fail = false;
+    rowIndex = row + 1;
+    for (let i = col - 1; i >= 0; i--) {
+      if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
+        counter++;
+      } else {
+        fail = true;
+      }
+      if (rowIndex < this.matchBoard.getColumns()) rowIndex++;
     }
     if (counter >= 3) {
       return true;
