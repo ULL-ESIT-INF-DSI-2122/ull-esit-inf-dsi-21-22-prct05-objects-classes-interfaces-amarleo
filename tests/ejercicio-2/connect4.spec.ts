@@ -7,12 +7,12 @@ import {Board} from '../../src/ejercicio-2/board';
 let player1 = new Player(1);
 let player2 = new Player(2);
 let board = new Board();
-let match = new Connect4(board, player1, player2);
+let match = new Connect4(board, [player1, player2]);
 
 describe('Connect4 Class Tests', () => {
   describe('Connect4 Class Constructor', () => {
     it('2 players', () => {
-      expect(match.board).to.be.eql([
+      expect(match.matchBoard.board).to.be.eql([
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
