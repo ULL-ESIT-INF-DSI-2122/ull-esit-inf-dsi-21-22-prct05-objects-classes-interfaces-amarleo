@@ -41,4 +41,18 @@ describe('Connect4 Class Tests', () => {
       expect(match.getPlayer(1)).to.be.eql(player2);
     });
   });
+  describe('checkWin method', () => {
+    it('Horizontal Win', () => {
+      const newBoard: number[][] = [
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0, 0, 0]];
+      board.setBoard(newBoard);
+      match = new Connect4(board, [player1, player2]);
+      expect(match.checkWin()).to.be.true;
+    });
+  });
 });
