@@ -1,5 +1,6 @@
 import {Board} from './board';
 import {Player} from './player';
+const prompt = require('prompt-sync')();
 
 export class Connect4 {
   matchBoard: Board;
@@ -41,7 +42,8 @@ export class Connect4 {
         fail = true;
       }
     }
-    if (counter === 3) {
+    console.log(counter);
+    if (counter >= 3) {
       return true;
     }
     // vertical
@@ -63,24 +65,62 @@ export class Connect4 {
       }
     }
     if (counter >= 3) {
+      console.log('TRUE');
       return true;
     }
 
     return false;
   }
+
+  start() :string {
+    let win: boolean = false;
+    let col: number = 0;
+    let turn: number = 1;
+    while (!win) {
+      if (turn % 2 === 1) {
+        console.log('Player 1 turn\n');
+        col = prompt('Type the selected col\n');
+        this.matchBoard.dropToken(col, this.players[0].getToken());
+        console.log(this.matchBoard.printBoard());
+        console.log(this.matchBoard.getRowToken());
+        if (this.checkWin(
+            this.players[0].getToken(), this.matchBoard.getRowToken(), col) ===
+            true) {
+          win = true;
+          return 'Player 1 won!';
+        }
+      } else if ((turn % 2 === 0) && win === false) {
+        console.log('Player 2 turn\n');
+        col = prompt('Type the selected col\n');
+        this.matchBoard.dropToken(col, this.players[1].getToken());
+        console.log(this.matchBoard.printBoard());
+        console.log(this.checkWin(
+            this.players[1].getToken(), this.matchBoard.getRowToken(), col));
+        if (this.checkWin(
+            this.players[1].getToken(), this.matchBoard.getRowToken(), col) ===
+             true) {
+          win = true;
+          return 'Player 2 won!';
+        }
+      }
+      turn++;
+    }
+    return 'empate';
+  }
 }
 
-let player1 = new Player(1);
-let player2 = new Player(2);
-let board = new Board();
-let match = new Connect4(board, [player1, player2]);
-const newBoard: number[][] = [
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 1, 0, 0, 0, 0, 0],
-  [0, 1, 0, 0, 0, 0, 0],
-  [0, 1, 0, 0, 0, 0, 0],
-  [0, 1, 1, 1, 0, 0, 0]];
-board.setBoard(newBoard);
-match = new Connect4(board, [player1, player2]);
-console.log(match.checkWin(player1.getToken(), 3, 1));
+// let player1 = new Player(1);
+// let player2 = new Player(2);
+// let board = new Board();
+// let match = new Connect4(board, [player1, player2]);
+// const newBoard: number[][] = [
+//   [0, 0, 0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0, 0, 0]];
+// board.setBoard(newBoard);
+// match = new Connect4(board, [player1, player2]);
+// console.log(match.start());
+

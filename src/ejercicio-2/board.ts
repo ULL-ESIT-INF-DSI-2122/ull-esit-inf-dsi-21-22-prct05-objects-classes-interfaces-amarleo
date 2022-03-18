@@ -2,6 +2,7 @@ export class Board {
   rows: number;
   columns: number;
   board: number[][];
+  rowToken: number;
   constructor(rows: number = 6, columns: number = 7, board?: number[][]) {
     this.rows = rows;
     this.columns = columns;
@@ -12,6 +13,7 @@ export class Board {
       [0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0]];
+    this.rowToken = 0;
   }
 
   getRows() {
@@ -22,8 +24,16 @@ export class Board {
     return this.columns;
   }
 
+  getRowToken() {
+    return this.rowToken;
+  }
+
   setBoard(newBoard: number[][]) {
     this.board = newBoard;
+  }
+
+  setRowToken(rowToken: number) {
+    this.rowToken = rowToken;
   }
 
   printBoard(): string {
@@ -40,6 +50,7 @@ export class Board {
     while (i >= 0) {
       if ((this.board[i][pos] === 0) && (dropped === false)) {
         this.board[i][pos] = token;
+        this.setRowToken(i);
         dropped = true;
       }
       i--;
