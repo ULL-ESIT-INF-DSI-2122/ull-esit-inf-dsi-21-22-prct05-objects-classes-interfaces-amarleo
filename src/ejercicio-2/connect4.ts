@@ -42,7 +42,6 @@ export class Connect4 {
         fail = true;
       }
     }
-    console.log(counter);
     if (counter >= 3) {
       return true;
     }
@@ -65,7 +64,6 @@ export class Connect4 {
       }
     }
     if (counter >= 3) {
-      console.log('TRUE');
       return true;
     }
 
