@@ -49,6 +49,3 @@ export class Board {
     return newBoard;
   }
 }
-
-let MFboard = new Board();
-console.log((MFboard.dropToken(0, 2)).printBoard());
