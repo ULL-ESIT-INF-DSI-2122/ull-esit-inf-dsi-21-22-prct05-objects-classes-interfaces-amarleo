@@ -1,22 +1,44 @@
 import {Pokemon} from './pokemon';
 
+/**
+ * Combat Class
+ */
 export class Combat {
   firstPokemon: Pokemon;
   secondPokemon: Pokemon;
 
+  /**
+   * Combat Class Constructor
+   * @param firstPokemon Pokemon object that contains all the pokemon info
+   * @param secondPokemon Pokemon object that contains all the pokemon info
+   */
   constructor(firstPokemon: Pokemon, secondPokemon: Pokemon) {
     this.firstPokemon = firstPokemon;
     this.secondPokemon = secondPokemon;
   }
 
+  /**
+   * Getter method that returns one pokemon of the combat
+   * @returns Object Pokemons
+   */
   getFirstPokemon() {
     return this.firstPokemon;
   }
 
+  /**
+   * Getter method that returns one pokemon of the combat
+   * @returns Object Pokemons
+   */
   getSecondPokemon() {
     return this.secondPokemon;
   }
 
+  /**
+   * Method that compute the damage given to a Pokemon.
+   * @param atkPokemon number that contains the Pokemon Attack Power
+   * @param defPokemon number that contains the Pokemon Defense Power
+   * @returns number with the damage given
+   */
   pokemonDamage(atkPokemon: Pokemon, defPokemon: Pokemon) {
     let multiplier: number = 1;
     if (atkPokemon.getType() == 'Fire') {
@@ -39,6 +61,10 @@ export class Combat {
         50 * (atkPokemon.getAttack() / defPokemon.getDefense()) * multiplier);
   }
 
+  /**
+   * Method that start the pokemon combat
+   * @returns string that contains the combat historial
+   */
   start(): string {
     let firstPokemonAttack: number = 0;
     let secondPokemonAttack: number = 0;
