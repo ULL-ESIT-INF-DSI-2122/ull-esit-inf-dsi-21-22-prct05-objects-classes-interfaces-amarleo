@@ -378,7 +378,6 @@ A continuación, se mostrará el desarrollo de cada clase, así como del plantea
 #### Clase Board
 
 Se ha planteado la clase Board, la cuál tiene como principal objetivo almacenar y clasificar toda la información relacionada con el tablero del famoso juego Conecta 4. Según el enunciado, el tablero se compone de celdas. Para representar esto, se ha ideado un array de array, representando cada celda por fila y columna.
-
 Teniendo este planteamiento, se ha propuesto los siguientes tests unitarios: 
 
 ```typescript
