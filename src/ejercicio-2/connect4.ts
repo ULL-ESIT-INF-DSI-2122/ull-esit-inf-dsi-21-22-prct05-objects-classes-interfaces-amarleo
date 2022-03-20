@@ -74,33 +74,33 @@ export class Connect4 {
     // rowIndex = row - 1;
     // if (row >= 1) rowIndex = row - 1;
     // else {
-      // rowIndex = row;
+    // rowIndex = row;
     // }
     // for (let i = col + 1; i < this.matchBoard.getColumns(); i++) {
-      // if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
-        // counter++;
-      // } else {
-        // fail = true;
-      // }
-      // console.log(rowIndex);
-      // if (rowIndex > 0) rowIndex--;
+    // if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
+    // counter++;
+    // } else {
+    // fail = true;
+    // }
+    // console.log(rowIndex);
+    // if (rowIndex > 0) rowIndex--;
     // }
     // fail = false;
     // if (this.matchBoard.getRows() - row > 1) rowIndex = row + 1;
     // else {
-      // rowIndex = row;
+    // rowIndex = row;
     // }
     // for (let i = col - 1; i >= 0; i--) {
-      // console.log(rowIndex);
-      // if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
-        // counter++;
-      // } else {
-        // fail = true;
-      // }
-      // if (rowIndex < this.matchBoard.getColumns()) rowIndex++;
+    // console.log(rowIndex);
+    // if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
+    // counter++;
+    // } else {
+    // fail = true;
+    // }
+    // if (rowIndex < this.matchBoard.getColumns()) rowIndex++;
     // }
     // if (counter >= 3) {
-      // return true;
+    // return true;
     // }
 
     return false;
@@ -143,18 +143,18 @@ export class Connect4 {
   }
 }
 
-let player1 = new Player(1);
-let player2 = new Player(2);
-let board = new Board();
-let match = new Connect4(board, [player1, player2]);
-const newBoard: number[][] = [
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0]];
-board.setBoard(newBoard);
-match = new Connect4(board, [player1, player2]);
-console.log(match.start());
+// let player1 = new Player(1);
+// let player2 = new Player(2);
+// let board = new Board();
+// let match = new Connect4(board, [player1, player2]);
+// const newBoard: number[][] = [
+// [0, 0, 0, 0, 0, 0, 0],
+// [0, 0, 0, 0, 0, 0, 0],
+// [0, 0, 0, 0, 0, 0, 0],
+// [0, 0, 0, 0, 0, 0, 0],
+// [0, 0, 0, 0, 0, 0, 0],
+// [0, 0, 0, 0, 0, 0, 0]];
+// board.setBoard(newBoard);
+// match = new Connect4(board, [player1, player2]);
+// console.log(match.start());
 
