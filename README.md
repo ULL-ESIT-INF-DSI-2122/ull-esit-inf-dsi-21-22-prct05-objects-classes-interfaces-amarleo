@@ -1,5 +1,7 @@
 # Práctica 5: Objetos, clases e interfaces
 
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct05-objects-classes-interfaces-amarleo/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2122/ull-esit-inf-dsi-21-22-prct05-objects-classes-interfaces-amarleo?branch=master)
+
 ## Indice
 
   - [Introducción](#introducción)
