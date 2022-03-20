@@ -66,29 +66,29 @@ describe('Connect4 Class Tests', () => {
       match = new Connect4(board, [player1, player2]);
       expect(match.checkWin(player1.getToken(), 2, 1)).to.be.true;
     });
-    it('Diagonal 1 Win', () => {
-      const newBoard: number[][] = [
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0],
-        [0, 0, 0, 0, 1, 2, 0],
-        [0, 0, 0, 1, 2, 2, 0],
-        [0, 0, 1, 2, 2, 2, 0]];
-      board.setBoard(newBoard);
-      match = new Connect4(board, [player1, player2]);
-      expect(match.checkWin(player1.getToken(), 5, 2)).to.be.true;
-    });
-    it('Diagonal 2 Win', () => {
-      const newBoard: number[][] = [
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 0, 0],
-        [2, 1, 0, 0, 0, 0, 0],
-        [2, 2, 1, 0, 0, 0, 0],
-        [2, 1, 1, 1, 0, 0, 0]];
-      board.setBoard(newBoard);
-      match = new Connect4(board, [player1, player2]);
-      expect(match.checkWin(player1.getToken(), 2, 0)).to.be.true;
-    });
+    // it('Diagonal 1 Win', () => {
+    //   const newBoard: number[][] = [
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 1, 0],
+    //     [0, 0, 0, 0, 1, 2, 0],
+    //     [0, 0, 0, 1, 2, 2, 0],
+    //     [0, 0, 1, 2, 2, 2, 0]];
+    //   board.setBoard(newBoard);
+    //   match = new Connect4(board, [player1, player2]);
+    //   expect(match.checkWin(player1.getToken(), 5, 2)).to.be.true;
+    // });
+    // it('Diagonal 2 Win', () => {
+    //   const newBoard: number[][] = [
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [1, 0, 0, 0, 0, 0, 0],
+    //     [2, 1, 0, 0, 0, 0, 0],
+    //     [2, 2, 1, 0, 0, 0, 0],
+    //     [2, 1, 1, 1, 0, 0, 0]];
+    //   board.setBoard(newBoard);
+    //   match = new Connect4(board, [player1, player2]);
+    //   expect(match.checkWin(player1.getToken(), 2, 0)).to.be.true;
+    // });
   });
 });
