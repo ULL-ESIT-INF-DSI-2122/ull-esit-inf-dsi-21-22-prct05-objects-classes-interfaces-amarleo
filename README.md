@@ -365,12 +365,11 @@ Gyarados Wins!
 Tal y como se puede observar, el combate termina de forma automática cuando un Pokémon ha sido derrotado.
 
 
+### Ejercicio 2: Conecta 4
+
+
 ```typescript
 
 ```
-
-
-### Ejercicio 2: Conecta 4
-
 
 ## Conclusión
