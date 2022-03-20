@@ -17,4 +17,13 @@ El presente informe perteneciente a la quinta práctica de la asignatura de Desa
 
 
 ## Ejercicios
+
+A continuación, se comenzará a detallar cada uno de los ejercicios propuestos en esta práctica, mostrando y detallando los planteamientos que han sido llevados a cabo para la resolución de los mismos.
+
+### Ejercicio 1: Pokédex
+
+
+### Ejercicio 2: Conecta 4
+
+
 ## Conclusión
