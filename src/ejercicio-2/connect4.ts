@@ -33,7 +33,7 @@ export class Connect4 {
     return this.players;
   }
   /**
-  * getter plater 
+  * getter player
   * @param index number of the player array elemetn
   * @returns a player object
   */

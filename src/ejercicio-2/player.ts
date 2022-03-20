@@ -11,7 +11,6 @@ export class Player {
     this.token = token;
   }
   /**
-   * 
    * @returns number of the player's token
    */
   getToken(): number {
