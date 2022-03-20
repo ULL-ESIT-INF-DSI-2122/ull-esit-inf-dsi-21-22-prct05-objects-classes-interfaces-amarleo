@@ -16,6 +16,8 @@ export class Pokedex {
   }
 
   setNewPokemon(newPokemon: Pokemon) {
-    this.pokemonList.push(newPokemon);
+    if (this.pokemonList.indexOf(newPokemon) === -1) {
+      this.pokemonList.push(newPokemon);
+    }
   }
 }
