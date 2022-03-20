@@ -367,6 +367,109 @@ Tal y como se puede observar, el combate termina de forma automática cuando un 
 
 ### Ejercicio 2: Conecta 4
 
+Este ejercicio principalmente se ha planteado haciendo uso de tres clases, separadas en sus  tres respectivos ficheros. Según el enunciado propuesto, se han planteado las clases:
+
+- Clase Board
+- Clase Player
+- Clase Connect4
+
+A continuación, se mostrará el desarrollo de cada clase, así como del planteamiento que ha sido llevado a cabo.
+
+#### Clase Board
+
+Se ha planteado la clase Board, la cuál tiene como principal objetivo almacenar y clasificar toda la información relacionada con el tablero del famoso juego Conecta 4. Según el enunciado, el tablero se compone de celdas. Para representar esto, se ha ideado un array de array, representando cada celda por fila y columna.
+
+Teniendo este planteamiento, se ha propuesto los siguientes tests unitarios: 
+
+```typescript
+const emptyBoard = new Board(6, 7);
+const defaultBoard = new Board();
+
+describe('Board Class tests', () => {
+  describe('Constructor values tests', () => {
+    it('Board Constructor', () => {
+      expect(emptyBoard.rows).to.be.eql(6);
+      expect(emptyBoard.columns).to.be.eql(7);
+      expect(emptyBoard.board)
+          .to.be.eql([
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0]]);
+    });
+    it('Board Constructor Default values', () => {
+      expect(defaultBoard.rows).to.be.eql(6);
+      expect(defaultBoard.columns).to.be.eql(7);
+      expect(defaultBoard.board)
+          .to.be.eql([
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0]]);
+    });
+  });
+  describe('Board getters', () => {
+    it('getRows method', () => {
+      expect(defaultBoard.getRows()).to.be.eql(6);
+    });
+    it('getColumns method', () => {
+      expect(defaultBoard.getColumns()).to.be.eql(7);
+    });
+  });
+  describe('Board methods', () => {
+    it('print board method', () => {
+      expect(defaultBoard.printBoard()).to.be.eql(
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n');
+    });
+    it('drop token method', () => {
+      expect((defaultBoard.dropToken(1, 7).printBoard())).to.be.eql(
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,0,0,0,0,0,0]\n' +
+          '[0,7,0,0,0,0,0]\n');
+    });
+  });
+
+  [. . .]
+```
+En las líneas de código anteriores se puede observar sólo algunos de los ejemplos de los escenarios que se han planteado para superar. Tal y como se realizó para el ejercicio anterior, principalmente se comprueba el funcionamiento del constructor de clase, así como de sus principales métodos. 
+
+Una vez terminado los tests de clases, se procede a realizar el desarrollo del código. 
+
+
+```typescript
+
+```
+
+```typescript
+
+```
+
+
+#### Clase Player
+
+#### Clase Connect4
+
+
+
+```typescript
+
+```
+
+```typescript
+
+```
 
 ```typescript
 
