@@ -69,30 +69,30 @@ export class Connect4 {
     }
     // Diagonal 1
 
-    fail = false;
-    counter = 0;
-    rowIndex = row - 1;
-    for (let i = col + 1; i < this.matchBoard.getColumns(); i++) {
-      if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
-        counter++;
-      } else {
-        fail = true;
-      }
-      if (rowIndex > 0) rowIndex--;
-    }
-    fail = false;
-    rowIndex = row + 1;
-    for (let i = col - 1; i >= 0; i--) {
-      if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
-        counter++;
-      } else {
-        fail = true;
-      }
-      if (rowIndex < this.matchBoard.getColumns()) rowIndex++;
-    }
-    if (counter >= 3) {
-      return true;
-    }
+    // fail = false;
+    // counter = 0;
+    // rowIndex = row - 1;
+    // for (let i = col + 1; i < this.matchBoard.getColumns(); i++) {
+      // if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
+        // counter++;
+      // } else {
+        // fail = true;
+      // }
+      // if (rowIndex > 0) rowIndex--;
+    // }
+    // fail = false;
+    // rowIndex = row + 1;
+    // for (let i = col - 1; i >= 0; i--) {
+      // if ((this.getMatchBoard()[rowIndex][i] === player) && (fail === false)) {
+        // counter++;
+      // } else {
+        // fail = true;
+      // }
+      // if (rowIndex < this.matchBoard.getColumns()) rowIndex++;
+    // }
+    // if (counter >= 3) {
+      // return true;
+    // }
 
     return false;
   }
