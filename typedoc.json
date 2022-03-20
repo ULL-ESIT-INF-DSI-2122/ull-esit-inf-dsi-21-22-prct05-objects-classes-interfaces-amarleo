@@ -3,7 +3,7 @@
     "./src/modificacion/modificacion.ts",
     "./src/ejercicio-1/pokemon.ts",
     "./src/ejercicio-1/pokedex.ts",
-    "./src/ejercicio-1/combar.ts"
+    "./src/ejercicio-1/combat.ts"
   ],
   "out": "./docs"
 }
