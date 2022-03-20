@@ -14,7 +14,26 @@ El presente informe perteneciente a la quinta práctica de la asignatura de Desa
 
 ## Tareas Previas
 
+Como tareas previas se ha propuesto, a parte de aprender y practicar los principios SOLID, instalar y hacer uso de las herramientas Instanbul y Coveralls.
+Principalmente, para comenzar, se ha realizado la instalación de ambas a través del siguiente comando: 
 
+![instanbul and coveralls install](./img/img1.png)
+
+Posteriormente, dentro del fichero package.json, en la sección de scripts se ha añadido el comando "coverage": 
+
+![package.json](./img/img2.png)
+
+Ejecutando el comando **npm run coverage** se puede observar como la herramienta Istanbul se ha ejecutado con éxito: 
+
+![coverage](./img/img3.png)
+
+Una vez comprobado el funcionamiento de Instanbul, se procede a realizar la configuración necesaria para trabajar con Coveralls. Para ello, principalmente se necesita actualizar la línea que ha sido colocada con anterioridad en el package.json: 
+
+![package.json 2](./img/img4.png)
+
+Accediendo a la web de Coverall y haciendo público el repositorio de la práctica, se podrá añadir el mismo. Una vez seleccionado, se proporcionará un **repo_token**, el cuál es único y servirá de identificador para Coveralls.
+
+Finalmente, ejecutando el comando **npm run coverage** se podrá visualizar los tests realizados a través de Instanbul y Coveralls.
 
 ## Ejercicios
 
