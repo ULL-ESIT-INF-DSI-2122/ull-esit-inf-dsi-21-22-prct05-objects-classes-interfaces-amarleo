@@ -26,7 +26,7 @@ Este ejercicio principalmente se ha planteado haciendo uso de tres clases, separ
 
 - Pokemon
 - Pokedex
-- Combar
+- Combat
 
 A continuación se pretende detallar de forma más concreta todas y cada una de las decisiones empleadas tanto para la costrucción de las clases como la implemetación de todos sus métodos.
 
@@ -228,17 +228,143 @@ Finalmente, se ejecutan todos los tests:
 
 #### Combat
 
-
+La clase combat pretende ser un simulador de combate entre dos pokémons. En este caso, los tests desarrollados para esta clase son los que se muestran a continuación: 
 
 ```typescript
 
-```
-```typescript
+const Gyarados = new Pokemon('Gyarados', 6.5, 230, 'Water', 65, 60, 110, 500);
+const Chikorita = new Pokemon('Chikorita', 0.9, 6.4, 'Grass', 49, 65, 45, 45);
+const Ninetales = new Pokemon('Ninetales', 1.1, 19.9, 'Fire', 76, 75, 100, 73);
+
+const GyaradosVsNinetales = new Combat(Gyarados, Ninetales);
+const ChikoritaVsGyarados = new Combat(Chikorita, Gyarados);
+
+describe('Combat Class tests', () => {
+  it('Combat Constructor', () => {
+    expect(GyaradosVsNinetales.firstPokemon).to.be.eql(Gyarados);
+    expect(GyaradosVsNinetales.secondPokemon).to.be.eql(Ninetales);
+  });
+  describe('Combat Class methods', () => {
+    it('Pokemon Combat getters', () => {
+      expect(GyaradosVsNinetales.getFirstPokemon()).to.be.eql(Gyarados);
+      expect(GyaradosVsNinetales.getSecondPokemon()).to.be.eql(Ninetales);
+    });
+  });
+  describe('Pokemon Damage Function', () => {
+    it('Example 1: Gyarados vs Ninetales', () => {
+      expect(GyaradosVsNinetales.pokemonDamage(Gyarados, Ninetales))
+          .to.be.eql(87);
+    });
+    it('Example 2: Chikorita vs Gyarados', () => {
+      expect(GyaradosVsNinetales.pokemonDamage(Chikorita, Gyarados))
+          .to.be.eql(82);
+    });
+  });
+  describe('Pokemon Start Combat Function', () => {
+    it('Example 1: Gyarados vs Ninetales', () => {
+      expect(GyaradosVsNinetales.start()).to.have.string('Gyarados Wins!');
+    });
+    it('Example 2: Chikorita vs Gyarados', () => {
+      expect(ChikoritaVsGyarados.start()).to.have.string('Gyarados Wins!');
+    });
+  });
+});
 
 ```
+Siguiendo la misma metodología que para las anteriores clases, se han propuesto diferentes tests para tanto el constructor de clase como para los métodos.
+
+En esta clase unicamente se necesitarán los dos Pokémon que serán contrincantes en el combate. Es por ello que los únicos atributos por los que se compone esta clase son los siguientes:  
+
 ```typescript
+export class Combat {
+  firstPokemon: Pokemon;
+  secondPokemon: Pokemon;
+```
+Como se puede observar, se tratan de dos atributos de tipo Pokémon. De esta forma, será posible el acceso a toda la información necesaria para el combate, como son el nombre de cada uno y las estadísticas principales.
+
+En cuanto al constructor, se ha diseñado de forma que sea necesario siempre pasar como parámetros dos objetos de tipo Pokémon, y éste únicamente se encargará de settear ambos atributos.
+
+Posteriormente, se pretende desarrollar los diferentes métodos que serán necesarios para el desarrollo del combate. Al igual que el resto de clases, esta contendrá dos metodos o "getters" para obtener cada uno de los objetos por separado.
+
+Además, se ha traído de prácticas anteriores el método **pokemonDamage**, el cuál tras pasarle ataque y defensa de dos pokemons, retorna el daño total causado. Este método se encuentra a continuación: 
+
+```typescript
+  pokemonDamage(atkPokemon: Pokemon, defPokemon: Pokemon) {
+    let multiplier: number = 1;
+    if (atkPokemon.getType() == 'Fire') {
+      if (defPokemon.getType() == 'Grass') multiplier = 2;
+      if (defPokemon.getType() == 'Water') multiplier = 0.5;
+    }
+    if (atkPokemon.getType() == 'Water') {
+      if (defPokemon.getType() == 'Grass') multiplier = 0.5;
+      if (defPokemon.getType() == 'Fire') multiplier = 2;
+    }
+    if (atkPokemon.getType() == 'Grass') {
+      if (defPokemon.getType() == 'Fire') multiplier = 0.5;
+      if (defPokemon.getType() == 'Water') multiplier = 2;
+    }
+    if (atkPokemon.getType() == 'Electric') {
+      if (defPokemon.getType() == 'Grass') multiplier = 0.5;
+      if (defPokemon.getType() == 'Water') multiplier = 2;
+    }
+    return Math.round(
+        50 * (atkPokemon.getAttack() / defPokemon.getDefense()) * multiplier);
+  }
+```
+Por último, se encuentra el método **start**, el cuál se encarga de gestionar los turnos del combate, así como de realizar las diferentes operaciones respecto a lo retornado del método pokemonDamage. Tal y como se comenta en el enunciado, el combate terminará cuando uno de los Pokemon se quede sin HP restantes. Es por ello, que se ha tomado la decisión de hacer uso del bucle **while** que se encuentra a continuación: 
+
+```typescript
+    while (firstPokemonTotalDamage < this.secondPokemon.getHp() &&
+      secondPokemonTotalDamage < this.firstPokemon.getHp()) {
+```
+
+Como se puede ver, este bucle no acabará de realizar turnos hasta que uno de los Pokemon sea derrotado. Posteriormente, se han incluido dos principales casos, dependiendo del turno que sea. En caso de ser un turno impar, ataca el primer Pokemon. Por el contrario, en los turnos pares será el segundo Pokemon el que ataque. 
+
+En esencia, ambas condiciones se comportan de forma similar. En resumen, se recoge del método anterior el daño causado por un Pokemon hacia otro. Este valor es sumado al valor total de daño que ha producido este Pokemon durante el combate. Finalmente, se concatena al string que servirá como retorno al final del combate como historial.
+
+Una vez se rompa el bucle, se comprueba qué pokemon ha resultado vencedor y se añade comentarios extras al string. 
+
+A continuación se muestra un ejemplo del resultado de un combate protagonizado por los siguientes Pokémon: 
+
+
+```typescript
+const Gyarados = new Pokemon('Gyarados', 6.5, 230, 'Water', 65, 60, 110, 500);
+const Chikorita = new Pokemon('Chikorita', 0.9, 6.4, 'Grass', 49, 65, 45, 45);
+
+const ChikoritaVsGyarados = new Combat(Chikorita, Gyarados);
+console.log(ChikoritaVsGyarados.start());
 
 ```
+Como se puede observar, se han creado dos nuevos objetos de Pokemon, los cuáles han sido colocados como parámetros en el costructor de la clase Combat. Finalmente, imprimiendo por pantalla el resultado del método **start** se devuelve lo siguiente:  
+
+```bash
+Turn 1: Chikorita hits Gyarados with 82 points of damage -> [ 500 - 82 = 418HP left ]
+Turn 2: Gyarados hits Chikorita with 25 points of damage -> [ 45 - 25 = 20HP left ]
+Turn 3: Chikorita hits Gyarados with 82 points of damage -> [ 418 - 82 = 336HP left ]
+Turn 4: Gyarados hits Chikorita with 25 points of damage -> [ 20 - 25 = -5HP left ]
+Chikorita fainted!
+Gyarados Wins!
+```
+Como se puede observar, se muestra información por cada turno del combate. En primer lugar, se informa del Pokémon agresor y el agredido, junto con la potencia del ataque. Finalmente se muestra un resultado de cuántos HP restantes le queda al Pokemon agredido. En el momento en el que un Pokémon tiene 0HP o menos, se muestra un mensaje de que este Pokémon ha sido derrotado.
+
+Para finalizar, se muestra el caso de un combate de un sólo turno: 
+
+```typescript
+const Gyarados = new Pokemon('Gyarados', 6.5, 230, 'Water', 65, 60, 110, 500);
+const Ninetales = new Pokemon('Ninetales', 1.1, 19.9, 'Fire', 76, 75, 100, 73);
+const GyaradosVsNinetales = new Combat(Gyarados, Ninetales);
+console.log(GyaradosVsNinetales.start());
+
+```
+```bash
+Turn 1: Gyarados hits Ninetales with 87 points of damage -> [ 73 - 87 = -14HP left ]
+Ninetales fainted!
+Gyarados Wins!
+
+```
+Tal y como se puede observar, el combate termina de forma automática cuando un Pokémon ha sido derrotado.
+
+
 ```typescript
 
 ```
