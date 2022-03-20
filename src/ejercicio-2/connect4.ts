@@ -2,27 +2,51 @@ import {Board} from './board';
 import {Player} from './player';
 const prompt = require('prompt-sync')();
 
+/**
+ * Connect 4 class
+ */
 export class Connect4 {
   matchBoard: Board;
   players: Player[];
 
+  /**
+   * Connect 4 constructor
+   * @param matchBoard object (board)
+   * @param players array of players
+   */
   constructor(matchBoard: Board, players: Player[]) {
     this.matchBoard = matchBoard;
     this.players = players;
   }
-
+  /**
+   * getter matchboard
+   * @returns board object
+   */
   getMatchBoard() {
     return this.matchBoard.board;
   }
-
+  /**
+   * getter players
+   * @returns returns the array with all players
+   */
   getPlayers() {
     return this.players;
   }
-
+  /**
+  * getter plater 
+  * @param index number of the player array elemetn
+  * @returns a player object
+  */
   getPlayer(index: number) {
     return this.players[index];
   }
-
+  /**
+   * checkWin method
+   * @param player number of the token
+   * @param row row to check
+   * @param col col to check
+   * @returns true if it is a win solution, false if is not
+   */
   checkWin(player: number, row: number, col: number): boolean {
     // horizontal
     let counter: number = 0;
@@ -105,7 +129,10 @@ export class Connect4 {
 
     return false;
   }
-
+  /**
+   * start method
+   * @returns string with the winner
+   */
   start() :string {
     let win: boolean = false;
     let col: number = 0;
@@ -139,7 +166,7 @@ export class Connect4 {
       }
       turn++;
     }
-    return 'empate';
+    return 'Error';
   }
 }
 
